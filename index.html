@@ -3,50 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Formations gratuites et certifiantes accessibles depuis le Congo. Guides en français, compatibles connexion lente.">
+  <meta name="color-scheme" content="light only">
+  <meta name="description" content="Formations gratuites et certifiantes testées depuis Brazzaville. Guides pas-à-pas, compatibles connexion lente.">
   <title>FormaLibre Congo | Formations gratuites certifiantes</title>
   <style>
-    :root { --primary: #0f52ba; --text: #1a1a1a; --bg: #f8f9fa; --card: #ffffff; --gray: #555; }
+    :root {
+      --primary: #0f52ba;
+      --primary-hover: #0a3d8f;
+      --text: #111827;
+      --text-light: #4b5563;
+      --bg: #ffffff;
+      --card-bg: #f9fafb;
+      --border: #e5e7eb;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); font-size: 16px; }
-    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    header { background: var(--card); padding: 25px 20px; border-bottom: 3px solid var(--primary); text-align: center; margin-bottom: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    html { color-scheme: light; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+    header { text-align: center; padding: 32px 0 24px; border-bottom: 3px solid var(--primary); margin-bottom: 32px; }
     .logo { font-size: 2rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
-    .tagline { color: var(--gray); margin-top: 8px; font-size: 1.1rem; }
-    .hero { background: var(--card); padding: 40px 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 35px; }
-    .hero h2 { font-size: 1.8rem; margin-bottom: 15px; }
-    .hero p { color: var(--gray); max-width: 600px; margin: 0 auto 25px; font-size: 1.05rem; }
-    .btn { display: inline-block; background: var(--primary); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
-    .btn:hover { background: #0a3d8f; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px; }
-    .card { background: var(--card); padding: 25px; border-radius: 10px; border: 1px solid #e0e0e0; text-align: center; }
-    .card h3 { margin-bottom: 10px; color: var(--primary); }
-    footer { text-align: center; padding: 30px 0; color: var(--gray); font-size: 0.95rem; border-top: 1px solid #e0e0e0; }
+    .tagline { color: var(--text-light); margin-top: 8px; font-size: 1.05rem; }
+    .hero {
+      background: var(--card-bg);
+      padding: 40px 24px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 32px;
+      border: 1px solid var(--border);
+    }
+    .hero h2 { font-size: 1.75rem; margin-bottom: 16px; line-height: 1.3; }
+    .hero p { color: var(--text-light); max-width: 640px; margin: 0 auto 24px; font-size: 1.05rem; }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .card h3 { margin-bottom: 10px; color: var(--primary); font-size: 1.1rem; }
+    .card p { color: var(--text-light); font-size: 0.95rem; }
+    .note {
+      background: #eff6ff;
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 6px;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    footer { text-align: center; padding: 24px 0; color: var(--text-light); font-size: 0.9rem; border-top: 1px solid var(--border); }
     footer a { color: var(--primary); text-decoration: none; }
-    @media (max-width: 600px) { .hero h2 { font-size: 1.5rem; } .btn { width: 100%; padding: 16px; } }
+    @media (max-width: 640px) {
+      .hero h2 { font-size: 1.5rem; }
+      .grid { grid-template-columns: 1fr; }
+      .btn { width: 100%; text-align: center; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">🎓 FormaLibre Congo</div>
-      <p class="tagline">Formations 100% gratuites + certifications reconnues, accessibles depuis Brazzaville</p>
+      <p class="tagline">Des formations gratuites qui délivrent un vrai papier. Sans arnaque, sans carte bancaire.</p>
     </header>
 
+    <div class="note">
+      💡 <strong>Note de l'auteur</strong> : Chaque guide est testé manuellement depuis Brazzaville. Si un lien ne marche plus ou si une certification change de prix, on met à jour sous 48h. Pas de robot, juste un humain qui vérifie.
+    </div>
+
     <section class="hero">
-      <h2>Monte en compétences sans dépenser 1 FCFA</h2>
-      <p>On teste, trie et explique les formations en ligne qui délivrent un vrai certificat. Pas d'arnaque, pas de pub intrusive. Juste de l'utile, rédigé en français simple.</p>
-      <a href="google-digital-garage.html" class="btn">👉 Voir le guide : Certification Google Gratuite</a>
+      <h2>Apprends un métier digital sans vider ton forfait</h2>
+      <p>Tu cherches à te former, tu tombes sur des sites qui demandent ton numéro de carte au moment du diplôme, ou des "certificats" que personne ne reconnaît. Ici, on ne garde que le sérieux. Chaque parcours est expliqué pas-à-pas, en français simple, et prévu pour fonctionner même avec une connexion 3G ou des coupures.</p>
+      <a href="google-digital-garage.html" class="btn">📖 Commencer par la formation Google (Guide pas-à-pas)</a>
     </section>
 
     <div class="grid">
-      <div class="card"><h3>✅ 100% Gratuit</h3><p>Aucune carte bancaire requise. Aucune inscription payante cachée.</p></div>
-      <div class="card"><h3>🎓 Certifié</h3><p>Diplômes reconnus par les recruteurs et les plateformes internationales.</p></div>
-      <div class="card"><h3> Adapté Congo</h3><p>Guides pas-à-pas, compatibles connexion lente et smartphone.</p></div>
+      <div class="card">
+        <h3>✅ 100% Gratuit</h3>
+        <p>Pas de "frais cachés" au moment du certificat. On vérifie chaque lien avant de le publier.</p>
+      </div>
+      <div class="card">
+        <h3>🎓 Papier reconnu</h3>
+        <p>Des certifications que les recruteurs et les freelances utilisent vraiment. Pas de simples badges décoratifs.</p>
+      </div>
+      <div class="card">
+        <h3>🇨🇬 Fait pour ici</h3>
+        <p>Rédigé depuis Brazza. On explique comment économiser tes données, sauvegarder hors-ligne, et où s'inscrire vraiment.</p>
+      </div>
     </div>
 
     <footer>
-      <p>FormaLibre Congo © 2026 • Site indépendant & gratuit • <a href="mailto:tonemail@gmail.com">Contact</a></p>
+      <p>FormaLibre Congo © 2026 • Projet indépendant • <a href="mailto:tonemail@gmail.com">Tu bloques ? Écris-nous, on répond à la main.</a></p>
     </footer>
   </div>
 </body>
